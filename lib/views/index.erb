@@ -1,0 +1,20 @@
+<%# Un fichier .erb est un fichier HTML dans lequel tu peux y rajouter du Ruby.
+En mélangeant les deux langages, tu vas pouvoir afficher en HTML des trucs du genre user.first_name, 
+ce qui est plutôt pratique pour dire "Bienvenue Félix" ou "Bienvenue José" selon qui se connecte %>
+<html>
+    <head>
+        <title>The Gossip Project</title>
+    </head>
+    <body>
+        <h1>Mon super site de gossip, depuis le dossier views !</h1>
+        <a href="/gossips/new/">Normalement, en cliquant par ici, tu devrais pouvoir créer un gossip.</a>
+        <p>Eh oui Jamy, ce lien est une route se trouvant sur le fichier "index.erb", pointant vers "new_gossip.erb"</p>
+        <h2>Et Maintenant... Place à l'affichage des gossips!</h2>
+        <% gossips.each do |gossip| %> <%#Quand tu joues avec un string, on peut insérer une variable Ruby dans le string avec #{}.%>
+            <p> <%#Avec un fichier ERB, on peut faire ceci avec "<%" "<%=" %>
+                <%= gossip.author %><br/> <%# "<%" te sert à exécuter du Ruby au sein d'un fichier HTML. Par exemple pour faire un each do. %>
+                <%= gossip.content %> <%# "<%=" va te servir à afficher un string Ruby qui est entre ces balises (c'est l'équivalent d'un puts mais sur du HTML) %>
+            </p>
+        <% end %>
+    </body>
+</html>

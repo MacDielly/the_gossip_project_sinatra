@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Créer un potin</title>
+  </head>
+  <body>
+    <h1>Crée un potin !</h1>
+    <p>Balance ton potin via le formulaire ci-dessous</p>
+    <%# Cette partie est l'ossature du formulaire. Le champ action définit l'URL qui va recevoir le contenu du formulaire et le champ method définit le type de requête. %>
+    <form action='/gossips/new/' method='POST'>
+      Saisi ici ton nom :  <input type='text' name='gossip_author'/><br/>
+      <%# Ici, on rajoute un champ de saisie de texte à remplir par l'utilisateur avec le tag HTML <input type='text'>. 
+      L'option name définir le nom que portera ce contenu saisi, tout comme on lui donnerait un nom de variable en Ruby du genre "user_name" ou autre. 
+      En l'appelant gossip_author et en mettant avant le champ de saisie la phrase "Saisie ici ton nom", on comprend bien qu'on veut que l'utilisateur tape ici son nom. %>
+      Balance ton potin : <input type='text' name='gossip_content'/><br/>
+      <input type='submit'/>
+      <%# Tout formulaire qui se respecte termine forcément par un bouton "submit". 
+      En cliquant dessus, l'utilisateur va déclencher l'envoi de la requête POST avec toutes les informations des champs du formulaire. %>
+    </form>
+  </body>
+</html>
